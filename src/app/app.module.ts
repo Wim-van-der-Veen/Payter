@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent, MenuComponent, OverviewComponent, DetailsComponent, NewItemComponent, DashboardComponent } from 'app/components';
 
 import { DataService } from 'app/services/data';
+import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { DataService } from 'app/services/data';
     DetailsComponent,
     NewItemComponent,
     DashboardComponent,
+    BreadcrumbComponent,
   ],
   imports: [
     BrowserModule,
