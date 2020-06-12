@@ -9,14 +9,15 @@ It consists of a basic angular/bootstrap application where applicants will be as
 
 This project uses the following technologies:
 
-* Angular 6 (https://angular.io/)
+* Angular 9 (https://angular.io/)
 * Bootstrap 4 (https://getbootstrap.com/)
+* RX JS (http://reactivex.io/)
 * Node.js and NPM (Node package manager) (https://nodejs.org/en/)
 * Git version control (https://git-scm.com/)
 * Sass css pre-processor (https://sass-lang.com/)
 * Font awesome icons (https://fontawesome.com/)
 
-Before continuing please install a Git client, and Node.js for your platform.
+Before continuing please install a Git client, and Node.js (version 10 or higher) for your platform.
 
 ### Cloning the repository
 
@@ -27,6 +28,8 @@ Create a personal branch of the master branch where you can commit your code. Ru
 ### Testing the application
 
 First install all the npm packages using `npm install`. This will download all the required packages to the node_modules folder.
+
+Secondly install the ng cli tool, using `npm install -g @angular/cli`. (https://www.npmjs.com/package/@angular/cli)
 
 Run `ng serve` inside the project directory to start a development server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 

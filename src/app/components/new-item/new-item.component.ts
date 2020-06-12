@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
@@ -10,7 +10,7 @@ import { DataService } from 'app/services/data';
 @Component({
   templateUrl: './new-item.component.html'
 })
-export class NewItemComponent {
+export class NewItemComponent implements OnInit {
 
   form: FormGroup;
 

@@ -22,7 +22,7 @@ export class DetailsComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe(params => {
-      let id = Number(params['id']);
+      const id = Number(params.id);
       this.dataService.getItem(id).subscribe(item => {
         this.$item.next(item);
       }, err => {

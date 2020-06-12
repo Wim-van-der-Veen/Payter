@@ -21,11 +21,11 @@ export class DataService {
   constructor() {
     MOCK_ITEMS.forEach(item => {
       this.items.set(item.id, item);
-    })
+    });
   }
 
   listItems(): Observable<DataItem[]> {
-    let values = Array.from(this.items.values());
+    const values = Array.from(this.items.values());
     return of(values).pipe(delay(200));
   }
 
