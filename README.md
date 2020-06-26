@@ -23,7 +23,7 @@ Before continuing please install a Git client, and Node.js (version 10 or higher
 
 Clone this repository using `git clone <url>` with the url specified at the top of this page.
 
-Create a personal branch of the master branch where you can commit your code. Run `git branch USER-<your-name>` to create a local branch.
+Create a personal branch of the master branch where you can commit your code. Run `git checkout -b app-<your-name>` to create a local branch.
 
 ### Testing the application
 
@@ -36,10 +36,10 @@ Run `ng serve` inside the project directory to start a development server. Navig
 ### Committing your changes
 
 For each assignment you will be asked for patch files. The patch files should contain only the changes relevant to the assignment.
-Create a new branch from your personal branch for each assignment `git branch ASSIGNMENT-<NR>`. When you are done, add and commit your changes to the assignment branch.
+Create a new branch from your personal branch for each assignment `git checkout -b assignment-<NR>`. When you are done, add and commit your changes to the assignment branch.
 
-To create a patch use `git format-patch USER-<name> -o patches/assignment-<NR>` which will create patch file for each commit with all the changes between your assignment branch, and the base branch, and place them in the directory patches/assignment-X.
-Finally merge your changes into your personal branch by running `git checkout USER-<name>` and  `git merge ASSIGNMENT-<NR>`. You are now free to create a new branch for the next assignment.
+To create a patch use `git format-patch app-<name> -o patches/assignment-<NR>` which will create patch file for each commit with all the changes between your assignment branch, and the base branch, and place them in the directory patches/assignment-X.
+Finally merge your changes into your personal branch by running `git checkout app-<name>` and  `git merge assignment-<NR>`. You are now free to create a new branch for the next assignment.
 
 ## Assignment
 
@@ -68,4 +68,4 @@ The application follows a common angular directory structure. The relevant files
 
 ### Data storage
 
-The application contains data service that stores entries in memory. This means new items are lost after every refresh. Please use the provisioned items for testing. The data service has a limit of 100 items, and applies an small delay on requests to simulate a real data service.
+The application contains a data service that stores entries in memory. This means new items are lost after every refresh. Please use the provisioned items for testing. The data service has a limit of 100 items, and applies a small delay on requests to simulate a real data service.
