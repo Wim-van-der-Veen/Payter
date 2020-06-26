@@ -13,7 +13,7 @@ const MOCK_ITEMS: DataItem[] = [
   { id: 51, name: 'cool item', description: 'this item is ice cold'},
   { id: 46, name: 'hot item', description: 'this item is blazing'},
   { id: 16, name: 'replacement item', description: 'this item is not important'},
-  { id: 32, name: 'cool item', description: 'this item is ice cold'},
+  { id: 32, name: 'sweet item', description: 'this item is full of sugar'},
 ];
 
 @Injectable()
@@ -59,6 +59,6 @@ export class DataService {
   }
 
   private delay() {
-    return Math.floor(Math.random() * 1000);
+    return Math.floor(Math.random() * 2000);
   }
 }

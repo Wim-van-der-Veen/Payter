@@ -2,7 +2,17 @@
   <div class="card">
     <div class="card-header">
       <h1>Overview of the items</h1>
-      <a class="btn btn-primary" [routerLink]="['/items','new']">New</a>
+      <form name="search" >
+        <div class="input-group mb-3">
+          <input class="form-control" type="text" name="search" placeholder="Search" />
+          <div class="input-group-append">
+            <input class="btn btn-secondary" type="submit" name="submit" value="Filter" />
+          </div>
+        </div>
+      </form>
+      <div class="btn-group">
+        <a class="btn btn-primary" [routerLink]="['/items','new']">New</a>
+      </div>
     </div>
     <ul class="list-group" *ngFor="let item of items$ | async">
       <li class="list-group-item" (click)="onSelectItem(item.id)">{{ item | json }}</li>
