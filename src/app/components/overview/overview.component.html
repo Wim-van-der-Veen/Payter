@@ -2,11 +2,11 @@
   <div class="card">
     <div class="card-header">
       <h1>Overview of the items</h1>
-      <form name="search" >
+      <form class="form" name="search" [formGroup]="filter" (ngSubmit)="onFilter()">
         <div class="input-group mb-3">
-          <input class="form-control" type="text" name="search" placeholder="Search" />
+          <input class="form-control" type="text" name="search" placeholder="Search" formControlName="search" />
           <div class="input-group-append">
-            <input class="btn btn-secondary" type="submit" name="submit" value="Filter" />
+            <input class="btn btn-secondary" type="submit" name="submit" value="Filter"/>
           </div>
         </div>
       </form>
@@ -18,7 +18,7 @@
       <div class="spinner-border" >
       </div>
     </div>
-    <ul class="list-group" *ngFor="let item of items$ | async">
+    <ul class="list-group" *ngFor="let item of items$ | async | appFilter: filterValue"><!-- 20210529 WV added a filter-pipe -->
       <li class="list-group-item" (click)="onSelectItem(item.id)">{{ item | json }}</li>
     </ul>
     <div class="card-footer">

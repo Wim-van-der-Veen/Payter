@@ -11,6 +11,8 @@ import { HeaderComponent, MenuComponent, OverviewComponent, DetailsComponent, Ne
 import { DataService } from 'app/services/data';
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 
+import { FilterPipe } from './pipes/filter/filter.pipe';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,6 +23,7 @@ import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
     NewItemComponent,
     DashboardComponent,
     BreadcrumbComponent,
+    FilterPipe,
   ],
   imports: [
     BrowserModule,
