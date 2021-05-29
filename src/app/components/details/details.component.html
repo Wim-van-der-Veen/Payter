@@ -1,3 +1,8 @@
+<div *ngIf="loading" class="d-flex justify-content-center"><!-- 20210529 WV loading indicator -->
+  <div class="spinner-border" >
+  </div>
+</div>
+
 <div class="card" *ngIf="$item | async as item; else notFound">
   <div class="card-header">
     Item: {{ item.name }}
@@ -11,7 +16,7 @@
 </div>
 
 <ng-template #notFound>
-  <div class="alert alert-danger">
+  <div *ngIf="!loading" class="alert alert-danger"><!-- 20210529 don't show this while still loading -->
     Item not found
   </div>
 </ng-template>
