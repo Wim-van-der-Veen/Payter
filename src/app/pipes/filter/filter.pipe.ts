@@ -24,16 +24,23 @@ export class FilterPipe implements PipeTransform {
         keys.splice(index, 1);
       }
       else
-        try { // try converting it to lower-case, if conversion errs just keep it like it is
-          searchObject[key] = searchObject[key].toLocaleLowerCase();
+        if (typeof searchObject[key] === 'string') {
+          try { // try converting it to lower-case, if conversion errs just keep it like it is
+            searchObject[key] = searchObject[key].toLocaleLowerCase();
+          }
+          catch(e) { }
         }
-        catch(e) { }
     });
     if (!keys.length) // if no keys left, don't filter
       return items;
 
     return items.filter(item => { // for each key: check if it exists in the item and if the specified content is part of the (lower-case) value
-      return !keys.some(key => !item[key] || !item[key].toLocaleLowerCase().includes(searchObject[key]));
+      return !keys.some(key => !item[key] ||
+        typeof searchObject[key] === 'string' && !item[key].toLocaleLowerCase().includes(searchObject[key]) ||
+        typeof searchObject[key] === 'number' && !(('' + item[key]).includes('' + searchObject[key])) ||
+        typeof searchObject[key] === 'boolean' && !(('' + item[key]).includes('' + searchObject[key])) ||
+        item[key] === searchObject[key] // other types
+      );
     });
   }
 

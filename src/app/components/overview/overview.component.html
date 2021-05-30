@@ -2,7 +2,7 @@
   <div class="card">
     <div class="card-header">
       <h1>Overview of the items</h1>
-      <form class="form" name="search" [formGroup]="filter" (ngSubmit)="onFilter()">
+      <form class="form" name="search" [formGroup]="filter">
         <div class="input-group mb-3">
           <input class="form-control" type="text" name="search" placeholder="Search" formControlName="search" />
           <div class="input-group-append">

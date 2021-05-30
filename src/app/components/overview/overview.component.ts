@@ -46,6 +46,7 @@ export class OverviewComponent implements OnInit {
     );
 
     this.filter = this.initForm();
+    this.filter.controls['search'].valueChanges.subscribe(() => this.onFilter()); // filter now reacts live
   }
 
   private initForm(): FormGroup {

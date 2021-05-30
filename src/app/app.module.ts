@@ -10,7 +10,6 @@ import { HeaderComponent, MenuComponent, OverviewComponent, DetailsComponent, Ne
 
 import { DataService } from 'app/services/data';
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
-
 import { FilterPipe } from './pipes/filter/filter.pipe';
 
 @NgModule({
